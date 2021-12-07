@@ -5,11 +5,9 @@ paper/figures
 
 # MineRL data and logs
 labels/
-data/
 logs/
 shared/
 performance/
-train/
 results/
 sacred_results/
 
