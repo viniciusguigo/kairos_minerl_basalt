@@ -1,0 +1,30 @@
+name: basalt
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - nomkl
+  - pip
+  - py-opencv
+  - cudatoolkit=10.0 # Remove this (put behind the comment line) if not on a GPU machine
+  - chardet
+  - pip:
+    - --index-url https://test.pypi.org/simple/
+    - --extra-index-url https://pypi.org/simple
+    - minerl
+    - crowdai_api
+    - aicrowd-repo2docker
+    - coloredlogs
+    - matplotlib
+    - seaborn
+    - namesgenerator
+    - torchvision
+    - pyro4
+    - git+git://github.com/HumanCompatibleAI/imitation@master#egg=imitation
+    - ./basalt_utils
+    - ./kairos_minerl
+    - torchsummary
+    - scikit-multilearn
+    - transitions
+    - trueskill

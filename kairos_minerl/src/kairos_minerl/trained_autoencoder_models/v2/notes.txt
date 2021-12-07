@@ -1,0 +1,41 @@
+v1 autoencoder:
+
+hyperparameters:
+
+loss = MSE
+batch_size = 32
+learning_rate = 1e-3
+input_shape = (3, 64, 64)
+
+# V2 autoencoder (low-rez 64x64 image): fully conv2d layers
+    def autoencoder_v2(self):
+        # encoder
+        self.encoder = nn.Sequential(
+            nn.Conv2d(self.n_input_channels, 128, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.BatchNorm2d(128),
+            nn.MaxPool2d((2,2)),
+            nn.Conv2d(128, 64, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.BatchNorm2d(64),
+            nn.MaxPool2d((2,2)),
+            nn.Conv2d(64, 3, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.BatchNorm2d(3),
+        )
+
+        # decoder
+        self.decoder = nn.Sequential(
+            nn.ConvTranspose2d(3, 64, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.BatchNorm2d(64),
+            nn.Upsample(scale_factor=2),
+            nn.ConvTranspose2d(64, 128, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.BatchNorm2d(128),
+            nn.Upsample(scale_factor=2),
+            nn.ConvTranspose2d(128, 3, kernel_size=3, stride=1, padding=1),
+            nn.Sigmoid(),
+        )          
+
+

@@ -1,0 +1,7 @@
+{
+  "challenge_id": "neurips-2021-minerl-basalt-competition",
+  "authors": ["vinicius_g_goecks"],
+  "description": "KAIROS Agent for MakeWaterfall (final v5 - fourth resubmission after server crashed?)",
+  "tags": "MakeWaterfall",
+  "gpu": false
+}
