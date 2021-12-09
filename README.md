@@ -24,3 +24,7 @@ If new dependencies are added to the environment.yml file, activate the environe
 ## Label Data and Retrain Agent
 
 Instruction to label data for the state-classifier is available at https://docs.google.com/document/d/11RxGh40WVZY1RX0734E0bWiHmpVX0lJMs7-paU1dqY8/edit#heading=h.fdoz4yxhczbg.
+
+## Citation
+
+If using any of this work, please cite our publication: https://arxiv.org/abs/2112.03482
